@@ -1,0 +1,21 @@
+footer {
+    border-top: 3px double black;
+    margin-top: 20px;
+}
+
+blockquote {
+    font-family: 'Caveat', 'sans-serif';
+    font-style: italic;
+
+    & .text {
+
+    }
+
+    & .author {
+        text-indent: 20px;
+
+        &:before {
+            content: '-- ';
+        }
+    }
+}
