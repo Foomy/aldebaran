@@ -1,0 +1,14 @@
+header {
+    background: #ddd;
+    margin-bottom: 15px;
+
+
+    & .logo {
+        display: block;
+        margin: 10px auto;
+    }
+
+    & .title {
+        margin-top: 15px;
+    }
+}

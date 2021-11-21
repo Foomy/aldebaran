@@ -1,19 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+<!--suppress HtmlUnknownTarget -->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
+    <title>Castor Nutrition Assistant{% block title %}{% endblock %}</title>
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('styles/app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('js/app') }}
+    {% endblock %}
+</head>
+<body>
+    <header class="container">
+        <div class="row">
+            <div class="col-2">
+                <img class="logo" src="https://dummyimage.com/110.png/aaa/000&text=Logo" alt="">
+            </div>
+            <div class="col-10">
+                <h1 class="title">Castor</h1>
+                <h5>Nutrition Assistant</h5>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            {{ include('_main-navigation.html.twig') }}
+        </nav>
+    </div>
+
+    <div class="container">
         {% block body %}{% endblock %}
-    </body>
+    </div>
+
+    <footer class="container">
+        <div class="row">
+            <blockquote>
+                <p class="text">Wenn's um Ernährung geht, ist gar nichts einfach.</p>
+                <p class="author">Mai Thi Nguyen-Kim</p>
+            </blockquote>
+        </div>
+    </footer>
+</body>
 </html>
