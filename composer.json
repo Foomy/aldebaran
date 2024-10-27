@@ -16,6 +16,7 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.1.*",
         "symfony/runtime": "7.1.*",
+        "symfony/translation": "7.1.*",
         "symfony/uid": "7.1.*",
         "symfony/webpack-encore-bundle": "^2.1",
         "symfony/yaml": "7.1.*"
@@ -73,6 +74,7 @@
         "symfony/debug-bundle": "7.1.*",
         "symfony/maker-bundle": "^1.61",
         "symfony/stopwatch": "7.1.*",
-        "symfony/web-profiler-bundle": "7.1.*"
+        "symfony/web-profiler-bundle": "7.1.*",
+        "phpunit/phpunit": "^11.4"
     }
 }
