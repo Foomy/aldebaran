@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+blockquote {
+    padding: 5px 10px;
+
+    & .content:before {
+        content: '“';
+        float: left;
+        font-family: serif;
+        font-size: 3em;
+        color: #777;
+        margin: -15px 5px;
+    }
+
+    & .source {
+        text-indent: 40px;
+        line-height: 0.7em;
+    }
+
+    & .source:before {
+        content: '-- ';
+    }
+}

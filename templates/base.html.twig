@@ -1,18 +1,54 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<!--suppress HtmlUnknownTarget -->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <title>{{ "header.subtitle" | trans }}{% block title %}{% endblock %}</title>
+
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('styles/app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('js/app') }}
+    {% endblock %}
+</head>
+<body>
+<header class="container">
+    <div id="header-content" class="row">
+        <div id="logo" class="col-2">
+            <img src="https://dummyimage.com/110.png/aaa/000&text=Logo" alt="">
+        </div>
+        <div id="title" class="col-10">
+            <h1>{{ "header.maintitle" | trans }}</h1>
+            <h2>{{ "header.subtitle" | trans }}</h2>
+        </div>
+    </div>
+</header>
+
+<div id="page-wrapper">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            {{ include('_main-navigation.html.twig') }}
+        </nav>
+
+        <div class="content">{% block body %}{% endblock %}</div>
+    </div>
+</div>
+
+<footer class="container">
+    <div id="footer-content" class="row">
+        <blockquote class="col-3">
+            <div class="content">
+                <p class="quote">Wenn's um Ernährung geht, ist gar nichts einfach.</p>
+                <p class="source">Mai Thi Nguyen-Kim</p>
+            </div>
+        </blockquote>
+    </div>
+</footer>
+</body>
 </html>
