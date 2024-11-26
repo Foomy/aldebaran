@@ -1,0 +1,21 @@
+.nav-item {
+    border-radius: 5px;
+    background: #55b9f3;
+    padding: 5px;
+    width: 75px;
+    text-align: center;
+    cursor: pointer;
+}
+.nav-item:hover {
+    border-radius: 5px;
+    background: linear-gradient(145deg, #105177, #5bc6ff);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+.nav-link:visited {
+    text-decoration: none;
+    color: white;
+}
