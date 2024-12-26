@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "title.food.list" | trans }}{% endblock %}
+
+{% block body %}
+    {% if app.session.flashbag.peekAll|length > 0 %}
+        {% for type, messages in app.session.flashbag.all %}
+            {% for message in messages %}
+                <div class="alert alert-{{ type }}">
+                    {{ message|trans({}, domain|default('messages')) }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    <table class="food-list table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>{{ "food.name" | trans }}</th>
+            <th>{{ "food.nutritionValue" | trans }}</th>
+            <th>{{ "food.protein" | trans }}</th>
+            <th>{{ "food.fat" | trans }}</th>
+            <th>{{ "food.roughage" | trans }}</th>
+            <th>{{ "food.carbonhydrate" | trans }}</th>
+            <th>{{ "food.actions" | trans }}</th>
+        </tr>
+        <tr>
+            <td colspan="7"></td>
+            <td class="food-list-actions">
+                <button type="button"
+                        class="btn btn-success"
+                        data-js="add-btn"
+                        title="{{ "food.action.add" | trans }}"><i class="fas fa-circle-plus"></i></button>
+            </td>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td colspan="7"></td>
+            <td class="food-list-actions">
+                <button type="button"
+                        class="btn btn-success"
+                        data-js="add-btn"
+                        title="{{ "food.action.add" | trans }}"><i class="fas fa-circle-plus"></i></button>
+            </td>
+        </tr>
+        </tfoot>
+        {% if (foods | length > 0) %}
+            <tbody>
+            {% for food in foods %}
+                <tr>
+                    <td>{{ food.id }}</td>
+                    <td>{{ food.name }}</td>
+                    <td>{{ food.nutritionValue }}</td>
+                    <td>{{ food.protein }}</td>
+                    <td>{{ food.fat }}</td>
+                    <td>{{ food.roughage }}</td>
+                    <td>{{ food.carbonhydrate }}</td>
+                    <td class="food-list-actions">
+                        <button type="button"
+                                class="btn btn-primary"
+                                data-js="detail-btn"
+                                title="{{ "food.action.details" | trans }}"><i class="fas fa-magnifying-glass"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-js="edit-btn"
+                                title="{{ "food.action.edit" | trans }}"><i class="fas fa-pencil"></i></button>
+                        <button type="button"
+                                class="btn btn-danger"
+                                data-js="delete-btn"
+                                title="{{ "food.action.delete" | trans }}"><i class="fas fa-circle-minus"></i></button>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        {% else %}
+            <tbody>
+            <tr>
+                <td colspan="8">
+                    {{ "food.list.empty.message" | trans }}
+                </td>
+            </tr>
+            </tbody>
+        {% endif %}
+    </table>
+{% endblock %}

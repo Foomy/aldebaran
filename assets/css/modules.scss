@@ -13,11 +13,15 @@ blockquote {
     }
 
     & .source {
-        text-indent: 40px;
+        text-indent: 20px;
         line-height: 0.7em;
     }
 
     & .source:before {
         content: '-- ';
     }
+}
+
+.food-list .food-list-actions {
+    padding: 3px;
 }
