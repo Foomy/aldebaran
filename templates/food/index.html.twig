@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "title.food.list" | trans }}{% endblock %}
+
+{% block body %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>{{ "food.name" | trans }}</th>
+            <th>{{ "food.nutritionValue" | trans }}</th>
+            <th>{{ "food.protein" | trans }}</th>
+            <th>{{ "food.fat" | trans }}</th>
+            <th>{{ "food.roughage" | trans }}</th>
+            <th>{{ "food.carbonhydrate" | trans }}</th>
+            <th>{{ "food.description" | trans }}</th>
+        </tr>
+    </thead>
+    {% if (foods | length > 0) %}
+    <tbody>
+        {% for food in foods %}
+            <tr>
+                <td>{{ food.id }}</td>
+                <td>{{ food.name }}</td>
+                <td>{{ food.nutritionValue }}</td>
+                <td>{{ food.protein }}</td>
+                <td>{{ food.fat }}</td>
+                <td>{{ food.roughage }}</td>
+                <td>{{ food.carbonhydrate }}</td>
+                <td>{{ food.description }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    {% else %}
+    <tbody>
+        <tr>
+            <td colspan="8">
+                {{ "food.list.empty.message" | trans }}
+            </td>
+        </tr>
+    </tbody>
+    {% endif %}
+</table>
+{% endblock %}
