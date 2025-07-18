@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BloodSugarController!{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('js/BloodSugar') }}
+    {{ encore_entry_script_tags('js/blood-sugar/ValueTable') }}
+    {{ encore_entry_script_tags('js/blood-sugar/Form') }}
+    <script>
+        window.document.addEventListener('DOMContentLoaded', (event) => {
+            const doc = event.target;
+            BloodSugar.init(doc);
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row row-heading">
+            <h3>h3.add.bloodsugar.measurement</h3>
+        </div>
+        <div class="row row-form">
+            {{ form_start(form) }}
+            <dl>
+                <dt>{{ form_label(form.measurementTime) }}</dt>
+                <dd>{{ form_widget(form.measurementTime) }}</dd>
+                <dt>{{ form_label(form.bloodSugarValue) }}</dt>
+                <dd>{{ form_widget(form.bloodSugarValue) }}</dd>
+            </dl>
+            <div>
+                {{ form_widget(form.cancel) }}
+                {{ form_widget(form.save) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

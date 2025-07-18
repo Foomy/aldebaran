@@ -7,7 +7,7 @@
 
     <title>{{ "header.subtitle" | trans }}{% block title %}{% endblock %}</title>
 
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('styles/app') }}
@@ -24,8 +24,8 @@
             <img src="https://dummyimage.com/110.png/aaa/000&text=Logo" alt="">
         </div>
         <div id="title" class="col-10">
-            <h1>{{ "header.maintitle" | trans }}</h1>
-            <h2>{{ "header.subtitle" | trans }}</h2>
+            <h1>{{ "h1.header.maintitle" | trans }}</h1>
+            <h2>{{ "h2.header.subtitle" | trans }}</h2>
         </div>
     </div>
 </header>
@@ -42,7 +42,7 @@
 
 <footer class="container">
     <div id="footer-content" class="row">
-        <blockquote class="col-3">
+        <blockquote class="col-4">
             <div class="content">
                 <p class="quote">Wenn's um Ernährung geht, ist gar nichts einfach.</p>
                 <p class="source">Mai Thi Nguyen-Kim</p>
