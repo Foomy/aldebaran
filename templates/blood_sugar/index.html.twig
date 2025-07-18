@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BloodSugarController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row row-controls">
+        <div class="col-12">
+            <button class="btn btn-primary" type="button" data-js="add-bs-measurement">
+                <i class="fas fa-plus-circle"></i> {{ "ctrl.add"|trans }}
+            </button>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div class="col-4">
+            <table class="sugar-values table">
+                <thead>
+                <tr>
+                    <td>{{ "svt.th.time"|trans }}</td>
+                    <td>{{ "svt.th.value"|trans }}</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for measurement in measurements %}
+                <tr>
+                    <td>{{ measurement.measurementTime.format('Y-m-d H:i') }}</td>
+                    <td>{{ measurement.bloodSugarValue }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">[DIAGRAM]</div>
+    </div>
+</div>
+{% endblock %}
