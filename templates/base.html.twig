@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-    <title>{{ "header.subtitle" | trans }}{% block title %}{% endblock %}</title>
-
-    <link rel="icon" href="/favicon.png" type="image/x-icon">
+    <title>{{ "header.subtitle" | trans }} - {% block title %}{% endblock %}</title>
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('styles/app') }}
@@ -15,6 +14,8 @@
 
     {% block javascripts %}
         {{ encore_entry_script_tags('js/app') }}
+        {{ encore_entry_script_tags('js/food-list') }}
+        {{ encore_entry_script_tags('js/food-form') }}
     {% endblock %}
 </head>
 <body>
@@ -42,9 +43,9 @@
 
 <footer class="container">
     <div id="footer-content" class="row">
-        <blockquote class="col-3">
+        <blockquote class="col-4">
             <div class="content">
-                <p class="quote">Wenn's um Ernährung geht, ist gar nichts einfach.</p>
+                <p class="quote">Wenn es um Ernährung geht, ist gar nichts einfach.</p>
                 <p class="source">Mai Thi Nguyen-Kim</p>
             </div>
         </blockquote>
