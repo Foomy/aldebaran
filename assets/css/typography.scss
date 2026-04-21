@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/**
+ * Table of contents:
+ *
+ * 1. Text styles
+ * 2. Headlines
+ * 2.1 Simple headlines
+ * 2.2 No-margin headlines
+ */
+
+/** 1. Text styles */
+
+.t-bold {
+    font-weight: bold;
+}
+.t-italic {
+    font-style: italic;
+}
+
+/** 2. Headlines */
+
+/** 2.1 Simple headlines */
+h1 {
+    font-size: 1.5em;
+    margin: 15px 0 25px 0;
+}
+
+h2 {
+    font-size: 1.4em;
+    margin: 15px 0 20px 0;
+}
+
+h3 {
+    font-size: 1.3em;
+    margin: 15px 0 15px 0;
+}
+
+h4 {
+    font-size: 1.1em;
+    margin: 15px 0 10px 0;
+}
+
+h5 {
+    font-size: 1em;
+    margin: 15px 0 5px 0;
+}
+
+/** 2.2 No-margin headlines */
+.head1 {
+    font-size: 1.5em;
+    font-weight:bold;
+}
+
+.head2 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.head3 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.head4 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.head5 {
+    font-size: 1em;
+    font-weight: bold;
+}

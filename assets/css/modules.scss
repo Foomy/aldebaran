@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+blockquote {
+    padding: 5px 10px;
+
+    & .quote:before {
+        content: '“';
+        float: left;
+        font-family: serif;
+        font-size: 5em;
+        color: #777;
+        margin: -25px 5px;
+    }
+
+    & .quote {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    & .source:before {
+        content: '-- ';
+    }
+
+    & .source {
+        text-indent: 15px;
+        line-height: 1.5em;
+    }
+}
