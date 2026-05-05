@@ -26,3 +26,32 @@ blockquote {
         line-height: 1.5em;
     }
 }
+
+.list-row {
+    & .btn {
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+
+        &.btn-add {
+            border-color: #00b100;
+            background: #00b100;
+        }
+
+        &.btn-details {
+            border-color: grey;
+            background: grey;
+            color: black;
+        }
+
+        &.btn-edit {
+            border-color: dodgerblue;
+            background: dodgerblue;
+        }
+
+        &.btn-delete {
+            border-color: red;
+            background: red;
+        }
+    }
+}
